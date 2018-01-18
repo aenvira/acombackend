@@ -1,0 +1,19 @@
+{
+  "APP_ROOT_URL": "http://localhost:3000",
+  "RESET_TOKEN_EXP_SEC": 360000,
+  "db": {
+    "username": "chatAdmin",
+    "password": "chatAmacom",
+    "host": "ds040837.mlab.com",
+    "port": "40837",
+    "name": "amacom"
+  },
+  "smtp": "smtps://vesseltrax%40gmail.com:BTZBN6Y2Spvn@smtp.gmail.com",
+  "sessionSecret": "secret",
+  "jwtSecret": "someRandomJWTSecretfasdgfwewtwtw",
+  "redis": {
+    "host": "redis-17576.c10.us-east-1-3.ec2.cloud.redislabs.com",
+    "port": 17576,
+    "password": "acom_ready"
+  }
+}
