@@ -1,10 +1,11 @@
-const messageModel = require('../database').models.message
+const MessageModel = require('../database').models.message
 const jwt = require('jsonwebtoken')
-//const User = require('../models/user')
-//const Channel = require('../models/channel')
+// const User = require('../models/user')
+// const Channel = require('../models/channel')
 
 const create = function(data, cb) {
-  const newMessage = new messageModel(data)
+  const newMessage = new MessageModel(data)
+
   newMessage.save(cb)
 }
 

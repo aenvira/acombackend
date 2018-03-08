@@ -1,4 +1,4 @@
-const Mongoose  = require('mongoose')
+const Mongoose = require('mongoose')
 
 const MessageSchema = new Mongoose.Schema({
   channelId: { type: String, required: true },

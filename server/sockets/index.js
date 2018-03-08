@@ -9,7 +9,7 @@ const init = function init(app) {
   const io = require('socket.io')(server)
 
   // Leave that for now to use defaults
-  //io.set('transports', ['websocket'])
+  // io.set('transports', ['websocket'])
 
   const port = config.redis.port
   const host = config.redis.host
@@ -22,10 +22,11 @@ const init = function init(app) {
 
 
   io.use((socket, next) => {
-    if (socket.handshake.query && socket.handshake.query.token){
+    if (socket.handshake.query && socket.handshake.query.token) {
       jwt.verify(socket.handshake.query.token, config.jwtSecret, (err, decoded) => {
-        if(err) return next(new Error('Authentication error'))
-
+        if (err) {
+          return next(new Error('Authentication error'))
+        }
         socket.decoded = decoded
         next()
       })

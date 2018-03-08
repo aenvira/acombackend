@@ -1,5 +1,5 @@
-const config = function () {
-  if(process.env.NODE_ENV === 'production') {
+const config = function() {
+  if (process.env.NODE_ENV === 'production') {
     const redisURI = require('url').parse(process.env.REDIS_URL)
     const redisPassword = redisURI.auth.split(':')[1]
 
@@ -21,9 +21,9 @@ const config = function () {
         password: redisPassword
       }
     }
-  } else {
-    return require('./config.json')
   }
+
+  return require('./config.json')
 }
 
 module.exports = config()

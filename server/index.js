@@ -31,10 +31,10 @@ const app = express()
 // }
 
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }))
 app.use(bodyParser.json())
-app.use(cors({credentials: false, origin: '*'}))
+app.use(cors({ credentials: false, origin: '*' }))
 app.use(session);
 app.use(passport.initialize());
 app.use(passport.session());
@@ -46,5 +46,5 @@ app.use('/', express.static('build'))
 const ioServer = require('./sockets')(app)
 
 ioServer.listen(serverPort)
-//server.listen(serverPort)
+// server.listen(serverPort)
 console.log(`Listening at http://${host}:${serverPort}`)

@@ -4,7 +4,7 @@ const db = require('../database')
 const config = require('../config')
 
 const init = function() {
-  if(process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     return session({
       secret: config.sessionSecret,
       resave: false,
@@ -12,14 +12,13 @@ const init = function() {
       unset: 'destroy',
       store: new MongoStore({ mongooseConnection: db.Mongoose.connection })
     })
-  } else {
-    return session({
-      secret: config.sessionSecret,
-      resave: false,
-      unset: 'destroy',
-      saveUninitialized: true
-    })
   }
+  return session({
+    secret: config.sessionSecret,
+    resave: false,
+    unset: 'destroy',
+    saveUninitialized: true
+  })
 }
 
 module.exports = init()
