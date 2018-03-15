@@ -27,7 +27,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon ./server",
-    "now-start": "node ./server"
+    "start": "nodemon index.js",
+    "now-start": "node index.js"
   }
 }
