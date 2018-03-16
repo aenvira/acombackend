@@ -20,8 +20,8 @@ pipeline:
     url: http://209.146.4.10:8080/v1/projects/1a5
     access_key: 76442AD25E72A6160829
     secret_key: bLN53rvQr41X6pmpctWwYyG8rUVkQyLGazzC8gJi
-    service: webapp/sample-web-app
-    docker_image: nside/acombackend
+    service: acom-backend/api
+    docker_image: nside/acombackend:dev
     start_first: true
     confirm: true
     timeout: 180
