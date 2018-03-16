@@ -1,5 +1,5 @@
 {
-  "name": "acomserver",
+  "name": "acombackend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -27,7 +27,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "now-start": "node index.js",
     "test": "node ./spec"
   }
