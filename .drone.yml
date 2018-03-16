@@ -1,6 +1,38 @@
 pipeline:
-  build:
+  test:
     image: node:8
     commands:
       - yarn install
       - yarn test
+  slack:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: drone-ci
++   username: drone
++   when:
++     status: [ success, failure ]
+  docker:
+    image: plugins/docker
+    username: nside
+    password: nsidelogin
+    dockerfile: Dockerfile
+    repo: nside/acombackend
+    tags: dev
+  rancher:
+    image: peloton/drone-rancher
+    url: http://209.146.4.10:8080/v1/projects/1a5
+    access_key: 76442AD25E72A6160829
+    secret_key: bLN53rvQr41X6pmpctWwYyG8rUVkQyLGazzC8gJi
+    service: webapp/sample-web-app
+    docker_image: nside/acombackend
+    start_first: true
+    confirm: true
+    timeout: 180
+  slack:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: drone-ci
++   username: drone
++   when:
++     status: [ success, failure ]
+branches: [ master, dev ]
