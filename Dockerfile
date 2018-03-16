@@ -4,4 +4,4 @@ WORKDIR /server
 COPY . /server
 RUN npm install
 CMD [ "npm", "start" ]
-EXPOSE 3000
+EXPOSE 8080
