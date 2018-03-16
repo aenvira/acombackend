@@ -1,9 +1,7 @@
 FROM node:8
 RUN mkdir -p /server
 WORKDIR /server
-ADD . /server
-RUN npm install -g -s --no-progress yarn && \
-    yarn && \
-    yarn cache clean
+COPY . /server
+RUN npm install
 CMD [ "npm", "start" ]
 EXPOSE 3000
