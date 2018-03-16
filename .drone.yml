@@ -4,11 +4,11 @@ pipeline:
     webhook: https://hooks.slack.com/services/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
     channel: drone-ci
     template: "<{{build.link}}|Deployment #{{build.number}} started> on <http://github.com/{{repo.owner}}/{{repo.name}}/tree/{{build.branch}}|{{repo.name}}:{{build.branch}}> by {{build.author}}"
-    #  test:
-    #image: node:8
-    #commands:
-    #  - yarn install
-    #  - yarn test
+  test:
+    image: node:8
+    commands:
+      - yarn install
+      - yarn test
   docker:
     image: plugins/docker
     username: nside
