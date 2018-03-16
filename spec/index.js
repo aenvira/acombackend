@@ -1,1 +1,7 @@
-console.log('Run test')
+function test() {
+  console.log('Run test')
+
+  return true
+}
+
+test()
