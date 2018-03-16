@@ -13,7 +13,7 @@ pipeline:
     image: plugins/docker
     username: nside
     password: nsidelogin
-    dockerfile: Dockerfile
+    #dockerfile: Dockerfile
     repo: nside/acombackend
     tags: dev
   rancher:
